@@ -1,0 +1,91 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3> New Transaction Form </h3>
+                <form [formGroup]="newTransactionForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Reference</label>
+                        <input class=sss maxlenth="15"  type="text"  formControlName="reference" class="form-control "
+                            [ngClass]="{ 'is-invalid': submitted && f.reference.errors }" />
+                        <div *ngIf="submitted && f.reference.errors" class="invalid-feedback">
+                            <div *ngIf="f.reference.errors.required">Reference is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Number</label>
+                        <input (keydown.enter)="onSearchChange($event)" type="text" formControlName="customernumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.customernumber.errors }" />
+                        <div *ngIf="submitted && f.customernumber.errors"  class="invalid-feedback">
+                            <div *ngIf="f.customernumber.errors.required">Customer number is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        <input type="text" formControlName="customername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.customername.errors }" />
+                        <div *ngIf="submitted && f.customername.errors" class="invalid-feedback">
+                            <div *ngIf="f.customername.errors.required">Customer name is required</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Customer Adderess</label>
+                            <input type="text" formControlName="customeraddress" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.customeraddress.errors }" />
+                            <div *ngIf="submitted && f.customeraddress.errors" class="invalid-feedback">
+                                <div *ngIf="f.customeraddress.errors.required">Customer address is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" numbersOnly formControlName="phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }" />
+                        <div *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.phonenumber.errors.required">Phone Number is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Transfer Amount</label>
+                        <input type="text" numbersOnly formControlName="transferamount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.transferamount.errors }" />
+                        <div *ngIf="submitted && f.transferamount.errors" class="invalid-feedback">
+                            <div *ngIf="f.transferamount.errors.required">Transfer Amount is required is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputcustno1">Transfer Currency</label>
+                        <select class="form-control" formControlName="trnsfCurrency">
+                          <option value="AED" selected>AED</option>
+                          <option value="EUR">EUR</option>
+                          <option value="CHF">CHF</option>
+                          <option value="MUR">MUR</option>
+                          <option value="USD">USD</option>
+                        </select>
+                      </div>
+                    <div class="form-group">
+                        <label>Beneficiary Bank</label>
+                        <input type="text" alphabetsOnly formControlName="beneficiarybank" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.beneficiarybank.errors }" />
+                        <div *ngIf="submitted && f.beneficiarybank.errors" class="invalid-feedback">
+                            <div *ngIf="f.beneficiarybank.errors.required">Bank details is required is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Account Number</label>
+                        <input type="text" formControlName="accountnumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.accountnumber.errors }" />
+                        <div *ngIf="submitted && f.accountnumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.accountnumber.errors.required">Transfer Amount is required is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Details</label>
+                        <input type="text" alphabetsOnly formControlName="paymentdetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paymentdetails.errors }" />
+                        <div *ngIf="submitted && f.paymentdetails.errors" class="invalid-feedback">
+                            <div *ngIf="f.paymentdetails.errors.required">Payment Details is required is required</div>
+                        </div>
+                    </div>
+                    <!
+                    
+                  <div class="form-group">
+                         <button  class="btn btn-primary">Submit</button> 
+                    
+                     </form>
+            </div>
+        </div>
+    </div>
+</div>
+

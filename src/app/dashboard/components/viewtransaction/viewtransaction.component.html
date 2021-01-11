@@ -1,0 +1,21 @@
+<table *ngIf="jsondata && jsondata.length>0">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Transfer Amount</th>
+            <th>Tranfer Currency</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let data of jsondata">
+        <tr>
+            <td>{{data?.customer_name}}</td>
+            <td>{{data?.transfer_amount}}</td>
+            <td>{{data?.transfer_currency}}</td>
+            <td>{{data?.reference}}</td>
+        </tr>
+        <tr *ngIf="data==null" > 
+          <td colspan="numberofcolum"> No Records found in Table </td>
+        </tr> 
+    </tbody>
+</table>
